@@ -73,11 +73,11 @@ export default function Navbar() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3">
                   <div>
-                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-yellow-500 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-10 w-10 rounded-full"
-                        src="/banner.png"
+                        src="https://lh3.googleusercontent.com/ogw/ADea4I5p4vDdtKAhQF-lmNdOlh9W9ShUHWH4wq1W1DDEyQ=s32-c-mo"
                         alt="profile"
                       />
                     </Menu.Button>

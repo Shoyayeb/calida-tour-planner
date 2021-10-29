@@ -18,7 +18,7 @@ function Login() {
             <div className=" my-3 md:w-2/5 md:flex-1">
               <button
                 aria-label=""
-                className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-500 py-3.5 px-4 border rounded-lg border-yellow-500 flex items-center w-full mt-10"
+                className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-green-500 py-3.5 px-4 border rounded-lg border-green-500 flex items-center w-full mt-10"
               >
                 <svg
                   width={19}
@@ -50,7 +50,7 @@ function Login() {
               </button>
               <button
                 aria-label="Continue with github"
-                className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-red-500 py-3.5 px-4 border rounded-lg border-yellow-500 flex items-center w-full mt-4"
+                className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-green-500 py-3.5 px-4 border rounded-lg border-green-500 flex items-center w-full mt-4"
               >
                 <svg
                   width={21}
@@ -70,7 +70,7 @@ function Login() {
               </button>
               <button
                 aria-label="Continue with twitter"
-                className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-red-500 py-3.5 px-4 border rounded-lg border-yellow-500 flex items-center w-full mt-4"
+                className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-green-500 py-3.5 px-4 border rounded-lg border-green-500 flex items-center w-full mt-4"
               >
                 <svg
                   width={24}
@@ -89,7 +89,6 @@ function Login() {
                 </p>
               </button>
             </div>
-            {/* break */}
             <div className="md:flex-1 w-auto md:w-3/5">
               <img
                 src="/loginBanner.jpg"
