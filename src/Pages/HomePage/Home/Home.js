@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "./../Banner/Banner";
 
 const Home = () => {
   // COLOR THEME:
@@ -6,7 +7,7 @@ const Home = () => {
   // other: #FAF620 OR #FFB606 OR #ffb606, #FF1F18, #12E344
   return (
     <div>
-      <p>this is home</p>
+      <Banner></Banner>
     </div>
   );
 };
