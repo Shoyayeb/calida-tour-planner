@@ -3,7 +3,7 @@ import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { ExclamationIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import React, { Fragment, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import useFirebase from "./../../../hooks/useFirebase";
+import useAuth from "./../../../hooks/useAuth";
 
 const navigation = [
   { name: "Home", href: "/home#home" },
@@ -17,7 +17,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth();
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
   const logOutModal = () => {
