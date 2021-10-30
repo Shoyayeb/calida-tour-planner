@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 flex z-20 items-center overflow-hidden">
+    <div className="bg-white items-center overflow-hidden">
       <div className="sm:container mx-auto px-6 sm:flex sm:flex-row flex-col py-16">
-        <div className="sm:w-2/3 lg:w-3/6 flex flex-col z-20">
-          <span className="w-20 h-2 bg-gray-800 dark:bg-white md:mb-12"></span>
+        <div className="sm:w-2/3 lg:w-3/6 flex flex-col">
+          <span className="w-20 h-2 bg-gray-800 md:mb-12"></span>
           <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none dark:text-white text-gray-800">
             Live with
             <span className="text-5xl sm:text-7xl">Nature</span>
