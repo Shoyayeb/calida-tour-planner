@@ -3,13 +3,14 @@ import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { ExclamationIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import React, { Fragment, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import useAuth from "./../../../hooks/useAuth";
 
 const navigation = [
   { name: "Home", href: "/home#home" },
-  { name: "Searvices", href: "/home#services" },
-  { name: "Projects", href: "/home#" },
-  { name: "Login", href: "/login" },
+  { name: "Services", href: "/home#services" },
+  { name: "About", href: "/home#about" },
+  { name: "Contact", href: "/home#contact" },
 ];
 
 function classNames(...classes) {
@@ -65,7 +66,7 @@ export default function Navbar() {
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
-                        <Link
+                        <HashLink
                           key={item.name}
                           to={item.href}
                           id={item.name}
@@ -76,7 +77,7 @@ export default function Navbar() {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </Link>
+                        </HashLink>
                       ))}
                     </div>
                   </div>
@@ -119,38 +120,41 @@ export default function Navbar() {
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <button
+                              <Link
+                                to="/myorders"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 py-2 text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 text-center py-2 text-sm text-yellow-500 font-normal"
                                 )}
                               >
-                                My Orders
-                              </button>
+                                My Booking
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <button
+                              <Link
+                                to="/allorders"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 py-2 text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 text-center py-2 text-sm text-yellow-500 font-normal"
                                 )}
                               >
-                                Manage All Orders
-                              </button>
+                                Manage All Booking
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <button
+                              <Link
+                                to="/newplan"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 py-2 text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 py-2 text-center text-sm text-yellow-500 font-normal"
                                 )}
                               >
-                                Add a new plan
-                              </button>
+                                Add a New Plan
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>
@@ -162,7 +166,7 @@ export default function Navbar() {
                                   "block w-full px-4 py-2 text-sm text-yellow-500 font-normal"
                                 )}
                               >
-                                Sign out
+                                Sign Out
                               </button>
                             )}
                           </Menu.Item>

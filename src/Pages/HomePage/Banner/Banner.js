@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="bg-white items-center overflow-hidden">
+    <div id="home" className="bg-white items-center overflow-hidden">
       <div className="sm:container mx-auto px-6 sm:flex sm:flex-row flex-col py-16">
         <div className="sm:w-2/3 lg:w-3/6 flex flex-col">
           <span className="w-20 h-2 bg-gray-800 md:mb-12"></span>

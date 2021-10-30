@@ -14,12 +14,15 @@ initializeAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  // GOOGLE LOGIN
   const signInUsingGoogle = () => {
+    setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((res) => {
         console.log(res.user);
@@ -28,8 +31,10 @@ const useFirebase = () => {
       .catch((error) => {
         setError(error.message);
         console.log(error.message);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
+  // GITHUB LOGIN
   const signInUsingGithub = () => {
     signInWithPopup(auth, githubProvider)
       .then((res) => {
@@ -39,24 +44,32 @@ const useFirebase = () => {
       .catch((error) => {
         setError(error.message);
         console.log(error.message);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
+  // LOG OUT
   const logOut = () => {
-    signOut(auth).then(() => {
-      setUser({});
-    });
+    setIsLoading(true);
+    signOut(auth)
+      .then(() => {})
+      .finally(() => setIsLoading(false));
   };
+  // ON AUTH STATE CHANGE
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        console.log(user);
+      } else {
+        setUser({});
       }
+      setIsLoading(false);
     });
+    return () => unsubscribed;
   }, []);
   return {
     user,
     error,
+    isLoading,
     signInUsingGoogle,
     signInUsingGithub,
     logOut,
