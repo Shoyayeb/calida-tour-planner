@@ -9,6 +9,7 @@ import MyOrders from "./Pages/MyOrders/MyOrders";
 import NotFound from "./Pages/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
+import Plan from "./Pages/SinglePlan/Plan/Plan";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/plans/:planId">
+              <Plan></Plan>
+            </PrivateRoute>
             <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
             </PrivateRoute>
