@@ -7,15 +7,15 @@ const Plan = () => {
   const { planId } = useParams();
   const [plan, setPlan] = useState([]);
   useEffect(() => {
-    const uri = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
-    fetch(uri)
+    const url = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setPlan(data));
   }, []);
   return (
     <div>
-      <DetailsPlan plan={plan}></DetailsPlan>
-      <BookPlan plan={plan}></BookPlan>
+      <DetailsPlan plan={plan} key={plan._id}></DetailsPlan>
+      <BookPlan plan={plan} key={plan._id}></BookPlan>
     </div>
   );
 };

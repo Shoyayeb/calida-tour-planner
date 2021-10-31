@@ -4,7 +4,7 @@ const DetailsPlan = (props) => {
   const { plan } = props;
   return (
     <div>
-      <div className="bg-white dark:bg-gray-800 lg:flex">
+      <div className="bg-white lg:flex">
         <div className="text-start px-2 lg:w-1/2 py-12 lg:py-16 lg:px-8  flex-1">
           <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
             <span className="block">Want to go {plan.name}?</span>
