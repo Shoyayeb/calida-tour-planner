@@ -13,9 +13,9 @@ const AllOrders = () => {
   const { isLoading } = useAuth();
   if (isLoading) {
     return (
-      <div class="flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <div
-          class="
+          className="
         animate-spin
         rounded-full
         h-32
@@ -31,7 +31,12 @@ const AllOrders = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:m-12">
       {" "}
       {plans.map((plan) => (
-        <OrderedCards plan={plan} key={plan._id}></OrderedCards>
+        <OrderedCards
+          plans={plans}
+          plan={plan}
+          setPlans={setPlans}
+          key={plan._id}
+        ></OrderedCards>
       ))}
     </div>
   );

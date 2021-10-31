@@ -6,21 +6,21 @@ const ServiceCard = (props) => {
 
   return (
     <div>
-      <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
-        <div href="#" class="w-full block h-full">
+      <div className="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
+        <div href="#" className="w-full block h-full">
           <img
             alt="blog"
             src={planDetails.image}
-            class="max-h-40 w-full object-cover"
+            className="max-h-40 w-full object-cover"
           />
-          <div class="bg-white dark:bg-gray-800 w-full p-4">
-            <p class="text-yellow-500 text-md font-medium">
+          <div className="bg-white dark:bg-gray-800 w-full p-4">
+            <p className="text-yellow-500 text-md font-medium">
               Starting From BDT {planDetails.price}
             </p>
-            <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
+            <p className="text-gray-800 dark:text-white text-xl font-medium mb-2">
               {planDetails.name}
             </p>
-            <p class="text-gray-400 dark:text-gray-300 font-light text-md">
+            <p className="text-gray-400 dark:text-gray-300 font-light text-md">
               {planDetails.description.slice(0, 190)}...
             </p>
           </div>

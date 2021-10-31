@@ -1,36 +1,27 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationIcon } from "@heroicons/react/outline";
 import React, { Fragment, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const OrderedCards = (props) => {
-  const { plan } = props;
+  const { plans, plan, setPlans } = props;
   const [planDetails, setPlanDetails] = useState([]);
   const [open, setOpen] = useState(false);
-  const [plans, setPlans] = useState([]);
   const cancelButtonRef = useRef(null);
-  // getting booked plans
-  useEffect(() => {
-    fetch("https://calida-tour-planner.herokuapp.com/bookedplans")
-      .then((res) => res.json())
-      .then((data) => setPlans(data));
-  }, []);
   const removeModal = () => {
     setOpen(true);
   };
   // deleting a booked plan
-  const removePlan = (id) => {
-    const url = `https://calida-tour-planner.herokuapp.com/plans/${id}`;
+  const removePlan = (planId) => {
+    const url = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
     fetch(url, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          alert("deleted successfully");
-          const remainingPlans = plans.filter(
-            (restPlan) => restPlan._id !== id
-          );
-          setPlans(remainingPlans);
+          const remaining = plans.filter((restPlan) => restPlan._id !== planId);
+          setPlans(remaining);
         }
       });
     setOpen(false);
@@ -59,12 +50,13 @@ const OrderedCards = (props) => {
         </div>
       </div>
       <div className="flex items-center justify-between gap-4 mt-6">
-        <button
+        <Link
+          to={`updateorder/${plan._id}`}
           type="button"
-          className="w-1/2 px-4 py-2 text-base border rounded-lg text-grey-500 bg-white hover:bg-gray-200 "
+          className="w-1/2 px-4 py-2 text-base border text-center rounded-lg text-grey-500 bg-white hover:bg-gray-200 "
         >
           Update
-        </button>
+        </Link>
         <button
           onClick={removeModal}
           type="button"

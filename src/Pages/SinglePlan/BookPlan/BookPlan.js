@@ -106,11 +106,11 @@ const BookPlan = (props) => {
               </h2>
               <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
                 <div className="relative">
-                  <label class="text-gray-700" for="adults">
+                  <label className="text-gray-700" for="adults">
                     Adults
                     <select
                       {...register("adults", { required: true })}
-                      class="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                      className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                     >
                       <option value="">Select an option</option>
                       <option value="1">1</option>
@@ -123,11 +123,11 @@ const BookPlan = (props) => {
                   </label>
                 </div>
                 <div className="relative">
-                  <label class="text-gray-700" for="child">
+                  <label className="text-gray-700" for="child">
                     Child
                     <select
                       {...register("child", { required: false })}
-                      class="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                      className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                     >
                       <option value="">Select an option</option>
                       <option value="1">1</option>
