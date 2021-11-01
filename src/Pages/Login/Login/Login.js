@@ -4,7 +4,7 @@ import useAuth from "./../../../hooks/useAuth";
 function Login() {
   const { error, signInUsingGoogle, signInUsingGithub } = useAuth();
   return (
-    <div className="h-full bg-gradient-to-tl from-yellow-100 to-green-300 w-full py-8 px-4">
+    <div className="h-full bg-gradient-to-tl from-green-100 to-green-300 w-full py-8 px-4">
       <div className="flex flex-row items-center justify-center">
         <div className=" bg-white shadow-lg rounded-lg lg:w-2/3  md:w-1/2 w-full p-10 mt-16">
           <p
@@ -54,7 +54,7 @@ function Login() {
                     fill="#EB4335"
                   />
                 </svg>
-                <p className="text-base font-medium ml-4 text-yellow-500">
+                <p className="text-base font-medium ml-4 text-green-500">
                   Continue with Google
                 </p>
               </button>
@@ -75,7 +75,7 @@ function Login() {
                     fill="#333333"
                   />
                 </svg>
-                <p className="text-base font-medium ml-4 text-yellow-500">
+                <p className="text-base font-medium ml-4 text-green-500">
                   Continue with Github
                 </p>
               </button>

@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Banner = () => {
   return (
@@ -18,18 +18,18 @@ const Banner = () => {
             and human existence take place.
           </p>
           <div className="flex mt-8">
-            <Link
-              to="/"
-              className="uppercase py-2 px-4 rounded-lg bg-yellow-500 border-2 border-transparent text-white text-md mr-4 hover:bg-yellow-400"
+            <HashLink
+              to="/home#services"
+              className="uppercase py-2 px-4 rounded-lg bg-green-500 border-2 border-transparent text-white text-md mr-4 hover:bg-green-400"
             >
               Get started
-            </Link>
-            <Link
-              to="/"
-              className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-yellow-500 text-yellow-500 dark:text-white hover:bg-yellow-500 hover:text-white text-md"
+            </HashLink>
+            <HashLink
+              to="/home#features"
+              className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-green-500 text-green-500 dark:text-white hover:bg-green-500 hover:text-white text-md"
             >
               Read more
-            </Link>
+            </HashLink>
           </div>
         </div>
 

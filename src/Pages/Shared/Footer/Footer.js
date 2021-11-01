@@ -8,7 +8,7 @@ const Footer = () => {
           <ul className="max-w-screen-md mx-auto text-lg font-light flex flex-wrap justify-between">
             <li className="my-2">
               <a
-                className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
                 href="/"
               >
                 FAQ
@@ -16,7 +16,7 @@ const Footer = () => {
             </li>
             <li className="my-2">
               <a
-                className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
                 href="/"
               >
                 Configuration
@@ -24,7 +24,7 @@ const Footer = () => {
             </li>
             <li className="my-2">
               <a
-                className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
                 href="/"
               >
                 Github
@@ -32,7 +32,7 @@ const Footer = () => {
             </li>
             <li className="my-2">
               <a
-                className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
+                className="text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
                 href="/"
               >
                 LinkedIn
@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="pt-8 flex max-w-xs mx-auto items-center justify-between">
             <a
               href="/"
-              className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
+              className="text-gray-700 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
             >
               <svg
                 width="20"
@@ -57,7 +57,7 @@ const Footer = () => {
             </a>
             <a
               href="/"
-              className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
+              className="text-gray-700 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
             >
               <svg
                 width="20"
@@ -72,7 +72,7 @@ const Footer = () => {
             </a>
             <a
               href="/"
-              className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
+              className="text-gray-700 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ const Footer = () => {
             </a>
             <a
               href="/"
-              className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
+              className="text-gray-700 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
             >
               <svg
                 width="20"
@@ -102,7 +102,7 @@ const Footer = () => {
             </a>
             <a
               href="/"
-              className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
+              className="text-gray-700 hover:text-gray-800 dark:hover:text-white transition-colors duration-200"
             >
               <svg
                 width="20"

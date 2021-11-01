@@ -9,7 +9,7 @@ import useAuth from "./../../../hooks/useAuth";
 const navigation = [
   { name: "Home", href: "/home#home" },
   { name: "Services", href: "/home#services" },
-  { name: "About", href: "/home#about" },
+  { name: "Features", href: "/home#features" },
   { name: "Contact", href: "/home#contact" },
 ];
 
@@ -74,7 +74,7 @@ export default function Navbar() {
                           to={item.href}
                           id={item.name}
                           className={classNames(
-                            "text-yellow-500 hover:bg-yellow-400 hover:text-white focus:bg-yellow-400 focus:text-white",
+                            "text-green-500 hover:bg-green-400 hover:text-white focus:bg-green-400 focus:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -90,7 +90,7 @@ export default function Navbar() {
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3">
                       <div>
-                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-yellow-500 focus:ring-white">
+                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-500 focus:ring-white">
                           <span className="sr-only">Open user menu</span>
                           <img
                             className="h-10 w-10 rounded-full"
@@ -127,7 +127,7 @@ export default function Navbar() {
                                 to={`/myorders/${shortEmail[0]}`}
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 text-center py-2 text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 text-center py-2 text-sm text-green-500 font-normal"
                                 )}
                               >
                                 My Booking
@@ -140,7 +140,7 @@ export default function Navbar() {
                                 to="/allorders"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 text-center py-2 text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 text-center py-2 text-sm text-green-500 font-normal"
                                 )}
                               >
                                 Manage All Booking
@@ -153,7 +153,7 @@ export default function Navbar() {
                                 to="/newplan"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 py-2 text-center text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 py-2 text-center text-sm text-green-500 font-normal"
                                 )}
                               >
                                 Add a New Plan
@@ -166,7 +166,7 @@ export default function Navbar() {
                                 onClick={logOutModal}
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
-                                  "block w-full px-4 py-2 text-sm text-yellow-500 font-normal"
+                                  "block w-full px-4 py-2 text-sm text-green-500 font-normal"
                                 )}
                               >
                                 Sign Out
@@ -181,7 +181,7 @@ export default function Navbar() {
                   <Link
                     to="/login"
                     className={classNames(
-                      "text-white bg-yellow-400 hover:text-yellow-500 hover:bg-white hover:border-yellow-500 border-yellow-400 border-2",
+                      "text-white bg-green-400 hover:text-green-500 hover:bg-white hover:border-green-500 border-green-400 border-2",
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
                   >
@@ -200,7 +200,7 @@ export default function Navbar() {
                     className={classNames(
                       item.current
                         ? "bg-gray-900 text-white"
-                        : "text-yellow-500 hover:bg-yellow-400 hover:text-white",
+                        : "text-green-500 hover:bg-green-400 hover:text-white",
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}

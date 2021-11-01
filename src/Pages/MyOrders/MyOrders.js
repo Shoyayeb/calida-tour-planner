@@ -48,7 +48,7 @@ const MyOrders = () => {
   }
   return (
     <div>
-      <h1 className="text-center text fw-bold text-yellow-500 lh-lg">
+      <h1 className="text-center text fw-bold text-green-500 lh-lg">
         My ordered plans
       </h1>
       {myOrders.map((plan) => (
