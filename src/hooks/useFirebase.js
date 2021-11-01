@@ -25,12 +25,10 @@ const useFirebase = () => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider)
       .then((res) => {
-        console.log(res.user);
         setError("");
       })
       .catch((error) => {
         setError(error.message);
-        console.log(error.message);
       })
       .finally(() => setIsLoading(false));
   };
@@ -38,12 +36,10 @@ const useFirebase = () => {
   const signInUsingGithub = () => {
     return signInWithPopup(auth, githubProvider)
       .then((res) => {
-        console.log(res.user);
         setError("");
       })
       .catch((error) => {
         setError(error.message);
-        console.log(error.message);
       })
       .finally(() => setIsLoading(false));
   };

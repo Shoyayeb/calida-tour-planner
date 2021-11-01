@@ -8,7 +8,6 @@ const UpdateOrder = () => {
   const [plan, setPlan] = useState([]);
   const [planDetails, setPlanDetails] = useState();
   const { planId } = useParams();
-  console.log("plannn", plan);
   const { user } = useAuth();
   const { register, handleSubmit } = useForm();
   const handleUpdatePlan = (data) => {
@@ -18,9 +17,6 @@ const UpdateOrder = () => {
         data
       )
       .then((res) => alert("Successfully updateds"));
-    // .then((res)=>console.log(res))
-
-    console.log(data);
   };
   useEffect(() => {
     const url = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
@@ -34,7 +30,6 @@ const UpdateOrder = () => {
       .then((res) => res.json())
       .then((data) => setPlanDetails(data));
   }, []);
-  console.log(planDetails);
   return (
     <div>
       <div id="#bookplan" className="lg:my-12">

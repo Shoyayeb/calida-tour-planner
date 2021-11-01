@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const OrderedCards = (props) => {
   const { plans, plan, setPlans } = props;
-  console.log("-------------", plan);
   const [planDetails, setPlanDetails] = useState([]);
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);

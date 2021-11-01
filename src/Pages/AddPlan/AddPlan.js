@@ -14,7 +14,6 @@ const AddPlan = () => {
           reset();
         }
       });
-    console.log(data);
   };
   return (
     <div className="bg-gradient-to-b from-red-400 to-yellow-400">
