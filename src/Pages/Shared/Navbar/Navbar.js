@@ -10,7 +10,7 @@ const navigation = [
   { name: "Home", href: "/home#home" },
   { name: "Services", href: "/home#services" },
   { name: "Features", href: "/home#features" },
-  { name: "Contact", href: "/home#contact" },
+  { name: "Guidelines", href: "/home#guidelines" },
 ];
 
 function classNames(...classes) {
@@ -114,7 +114,7 @@ export default function Navbar() {
                               <div>
                                 <h3 className="text-center block px-4 py-2 text-lg fw-bold font-normal">
                                   {user.displayName}
-                                  <span className="block py-2 text-xs text-green-500 font-normal">
+                                  <span className="block py-2 text-xs font-bold">
                                     {user.email}
                                   </span>
                                 </h3>

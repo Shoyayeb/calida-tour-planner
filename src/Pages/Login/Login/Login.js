@@ -1,8 +1,24 @@
 import React from "react";
+import { useHistory } from "react-router";
+import { useLocation } from "react-router-dom";
 import useAuth from "./../../../hooks/useAuth";
 
 function Login() {
   const { error, signInUsingGoogle, signInUsingGithub } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location.state?.from || "/home";
+  const handleLogin = (provider) => {
+    if (provider === "google") {
+      signInUsingGoogle().then((res) => {
+        history.push(redirect_uri);
+      });
+    } else if (provider === "github") {
+      signInUsingGithub().then((res) => {
+        history.push(redirect_uri);
+      });
+    }
+  };
   return (
     <div className="h-full bg-gradient-to-tl from-green-100 to-green-300 w-full py-8 px-4">
       <div className="flex flex-row items-center justify-center">
@@ -26,7 +42,7 @@ function Login() {
           <div className="md:flex justify-between md:gap-7">
             <div className=" my-3 md:w-2/5 md:flex-1">
               <button
-                onClick={signInUsingGoogle}
+                onClick={() => handleLogin("google")}
                 aria-label=""
                 className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-green-500 py-3.5 px-4 border rounded-lg border-green-500 flex items-center w-full mt-10"
               >
@@ -59,7 +75,7 @@ function Login() {
                 </p>
               </button>
               <button
-                onClick={signInUsingGithub}
+                onClick={() => handleLogin("github")}
                 aria-label="Continue with github"
                 className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-green-500 py-3.5 px-4 border rounded-lg border-green-500 flex items-center w-full mt-4"
               >

@@ -26,7 +26,7 @@ const ServiceCard = (props) => {
           </div>
           <Link
             to={`/plans/${planDetails._id}`}
-            className="w-full flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-3 md:text-lg md:px-6"
+            className="w-full flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-b-md text-white bg-green-600 hover:bg-green-700 md:py-3 md:text-lg md:px-6"
           >
             Book Now
           </Link>

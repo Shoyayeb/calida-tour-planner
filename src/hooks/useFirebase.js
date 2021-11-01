@@ -23,7 +23,7 @@ const useFirebase = () => {
   // GOOGLE LOGIN
   const signInUsingGoogle = () => {
     setIsLoading(true);
-    signInWithPopup(auth, googleProvider)
+    return signInWithPopup(auth, googleProvider)
       .then((res) => {
         console.log(res.user);
         setError("");
@@ -36,7 +36,7 @@ const useFirebase = () => {
   };
   // GITHUB LOGIN
   const signInUsingGithub = () => {
-    signInWithPopup(auth, githubProvider)
+    return signInWithPopup(auth, githubProvider)
       .then((res) => {
         console.log(res.user);
         setError("");
