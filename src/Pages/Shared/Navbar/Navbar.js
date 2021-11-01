@@ -21,6 +21,9 @@ export default function Navbar() {
   const { user, logOut } = useAuth();
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
+  const email = user?.email;
+  // const email = "safinhoe222@gmail.com";
+  const shortEmail = email?.split("@");
   const logOutModal = () => {
     setOpen(true);
   };
@@ -121,7 +124,7 @@ export default function Navbar() {
                           <Menu.Item>
                             {({ active }) => (
                               <Link
-                                to="/myorders"
+                                to={`/myorders/${shortEmail[0]}`}
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block w-full px-4 text-center py-2 text-sm text-yellow-500 font-normal"

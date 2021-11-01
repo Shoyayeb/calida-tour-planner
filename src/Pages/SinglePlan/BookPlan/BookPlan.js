@@ -1,30 +1,48 @@
 import axios from "axios";
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useRef } from "react";
 import useAuth from "./../../../hooks/useAuth";
 
 const BookPlan = (props) => {
   const { plan } = props;
-  console.log("plannn", plan);
   const { user } = useAuth();
-  const { register, handleSubmit, reset } = useForm();
-  const handleBookPlan = (data) => {
-    data.bookedPlace = plan._id;
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const childRef = useRef();
+  const adultRef = useRef();
+  const addressRef = useRef();
+  const phoneRef = useRef();
+  const handleBookPlan = (e) => {
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const child = childRef.current.value;
+    const adult = adultRef.current.value;
+    const phone = phoneRef.current.value;
+    const address = addressRef.current.value;
+    const bookedPlace = plan._id;
+
+    const bookedPlan = {
+      name,
+      email,
+      phone,
+      address,
+      adult,
+      child,
+      bookedPlace,
+    };
     axios
-      .post("https://calida-tour-planner.herokuapp.com/bookplan", data)
+      .post("https://calida-tour-planner.herokuapp.com/bookplan", bookedPlan)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added");
-          reset();
         }
       });
-    console.log(data);
+    e.preventDefault();
   };
   return (
     <div id="#bookplan" className="lg:my-12">
       <section className="lg:my-20 bg-pink-100 bg-opacity-50">
         <form
-          onSubmit={handleSubmit(handleBookPlan)}
+          onSubmit={handleBookPlan}
           className="container max-w-2xl mx-auto shadow-md md:w-3/4"
         >
           <div className="p-4 bg-gray-500 border-t-2 border-indigo-400 rounded-lg bg-opacity-5">
@@ -49,7 +67,7 @@ const BookPlan = (props) => {
                   <input
                     value={user.email}
                     type="email"
-                    {...register("email", { required: true, maxLength: 40 })}
+                    ref={emailRef}
                     className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Email"
                   />
@@ -65,7 +83,7 @@ const BookPlan = (props) => {
                     <input
                       value={user.displayName}
                       type="text"
-                      {...register("name", { required: true, maxLength: 40 })}
+                      ref={nameRef}
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Name"
                     />
@@ -75,10 +93,7 @@ const BookPlan = (props) => {
                   <div className=" relative ">
                     <input
                       type="number"
-                      {...register("phone", {
-                        required: true,
-                        min: 10,
-                      })}
+                      ref={phoneRef}
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Phone number"
                     />
@@ -88,10 +103,7 @@ const BookPlan = (props) => {
                   <div className=" relative ">
                     <input
                       type="text"
-                      {...register("address", {
-                        required: true,
-                        maxLength: 40,
-                      })}
+                      ref={addressRef}
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Address"
                     />
@@ -109,7 +121,7 @@ const BookPlan = (props) => {
                   <label className="text-gray-700" for="adults">
                     Adults
                     <select
-                      {...register("adults", { required: true })}
+                      ref={adultRef}
                       className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                     >
                       <option value="">Select an option</option>
@@ -126,7 +138,7 @@ const BookPlan = (props) => {
                   <label className="text-gray-700" for="child">
                     Child
                     <select
-                      {...register("child", { required: false })}
+                      ref={childRef}
                       className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                     >
                       <option value="">Select an option</option>
