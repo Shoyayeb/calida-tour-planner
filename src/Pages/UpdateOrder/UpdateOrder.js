@@ -10,19 +10,15 @@ const UpdateOrder = () => {
   const { planId } = useParams();
   console.log("plannn", plan);
   const { user } = useAuth();
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const handleUpdatePlan = (data) => {
     axios
       .put(
         `https://calida-tour-planner.herokuapp.com/updateplan/${planId}`,
         data
       )
-      .then((res) => console.log(res));
-    //   .then((res) => {
-    //     if (res.data.insertedId) {
-    //       alert("added");
-    //       reset();
-    //     }`
+      .then((res) => alert("Successfully updateds"));
+    // .then((res)=>console.log(res))
 
     console.log(data);
   };
@@ -156,6 +152,19 @@ const UpdateOrder = () => {
                         <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6">6</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div className="relative">
+                    <label className="text-gray-700" for="chistatusld">
+                      Status
+                      <select
+                        {...register("status", { required: true })}
+                        className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                      >
+                        <option value="">Select an option</option>
+                        <option value="">Pending</option>
+                        <option value="appr">Approved</option>
                       </select>
                     </label>
                   </div>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const OrderedCards = (props) => {
   const { plans, plan, setPlans } = props;
+  console.log("-------------", plan);
   const [planDetails, setPlanDetails] = useState([]);
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
@@ -37,14 +38,23 @@ const OrderedCards = (props) => {
     <div className="shadow-lg rounded-2xl w-80 p-4 bg-white dark:bg-gray-800">
       <div className="flex flex-row items-start gap-4">
         <img src={planDetails.image} alt="" className="w-28 h-28 rounded-lg" />
-        <div className="h-28 w-full flex flex-col justify-between">
+        <div className="h-auto w-full flex flex-col justify-between">
           <div>
             <p className="text-gray-800 dark:text-white text-xl font-medium">
               {planDetails.name}
             </p>
-            <p className="text-red-500 text-xs">By: {plan.name}</p>
+            <p className="text-red-500 mb-4 text-xs">By: {plan.name}</p>
+            {plan.status ? (
+              <span className="px-2 py-1  text-base rounded text-white  bg-green-600 font-medium">
+                Approved
+              </span>
+            ) : (
+              <span className="px-2 py-1  text-base rounded text-white  bg-red-600 font-medium">
+                Pending
+              </span>
+            )}
           </div>
-          <span className="px-2 py-1  text-base rounded bg-green-200 font-medium">
+          <span className="px-2 py-1 my-4 text-base rounded bg-green-200 font-medium">
             Price: {planDetails.price} <small>BDT</small>
           </span>
         </div>

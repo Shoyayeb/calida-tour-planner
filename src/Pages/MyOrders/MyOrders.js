@@ -6,8 +6,6 @@ import useAuth from "./../../hooks/useAuth";
 const MyOrders = () => {
   const [plans, setPlans] = useState([]);
   const { user } = useAuth();
-  const useremail = user.email;
-  console.log(useremail);
 
   useEffect(() => {
     const url = `https://calida-tour-planner.herokuapp.com/bookedplans`;
@@ -48,17 +46,19 @@ const MyOrders = () => {
   }
   return (
     <div>
-      <h1 className="text-center text fw-bold text-green-500 lh-lg">
+      <h1 className="text-center text-xl fw-bold text-green-800 lh-lg">
         My ordered plans
       </h1>
-      {myOrders.map((plan) => (
-        <OrderedCards
-          plans={myOrders}
-          plan={plan}
-          setPlans={setPlans}
-          key={plan._id}
-        ></OrderedCards>
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:m-12">
+        {myOrders.map((plan) => (
+          <OrderedCards
+            plans={myOrders}
+            plan={plan}
+            setPlans={setPlans}
+            key={plan._id}
+          ></OrderedCards>
+        ))}
+      </div>
     </div>
   );
 };

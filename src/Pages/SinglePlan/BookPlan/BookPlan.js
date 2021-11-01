@@ -19,6 +19,7 @@ const BookPlan = (props) => {
     const phone = phoneRef.current.value;
     const address = addressRef.current.value;
     const bookedPlace = plan._id;
+    const status = "";
 
     const bookedPlan = {
       name,
@@ -28,6 +29,7 @@ const BookPlan = (props) => {
       adult,
       child,
       bookedPlace,
+      status,
     };
     axios
       .post("https://calida-tour-planner.herokuapp.com/bookplan", bookedPlan)
@@ -41,6 +43,7 @@ const BookPlan = (props) => {
   return (
     <div id="#bookplan" className="lg:my-12">
       <section className="lg:my-20 bg-pink-100 bg-opacity-50">
+        <h1>HI</h1>
         <form
           onSubmit={handleBookPlan}
           className="container max-w-2xl mx-auto shadow-md md:w-3/4"
