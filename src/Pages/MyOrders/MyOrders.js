@@ -8,7 +8,7 @@ const MyOrders = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    const url = `https://calida-tour-planner.herokuapp.com/bookedplans`;
+    const url = `https://calida-tour-planner.onrender.com/bookedplans`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPlans(data));

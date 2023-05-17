@@ -4,7 +4,7 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 const Services = () => {
   const [plans, setPlans] = useState([]);
   useEffect(() => {
-    fetch("https://calida-tour-planner.herokuapp.com/plans")
+    fetch("https://calida-tour-planner.onrender.com/plans")
       .then((res) => res.json())
       .then((data) => setPlans(data));
   }, []);

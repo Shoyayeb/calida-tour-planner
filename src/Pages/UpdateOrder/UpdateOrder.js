@@ -13,19 +13,19 @@ const UpdateOrder = () => {
   const handleUpdatePlan = (data) => {
     axios
       .put(
-        `https://calida-tour-planner.herokuapp.com/updateplan/${planId}`,
+        `https://calida-tour-planner.onrender.com/updateplan/${planId}`,
         data
       )
       .then((res) => alert("Successfully updateds"));
   };
   useEffect(() => {
-    const url = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
+    const url = `https://calida-tour-planner.onrender.com/plans/${planId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPlan(data));
   }, []);
   useEffect(() => {
-    const url = `https://calida-tour-planner.herokuapp.com/bookedplans/${planId}`;
+    const url = `https://calida-tour-planner.onrender.com/bookedplans/${planId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPlanDetails(data));

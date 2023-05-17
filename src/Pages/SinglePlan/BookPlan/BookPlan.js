@@ -32,7 +32,7 @@ const BookPlan = (props) => {
       status,
     };
     axios
-      .post("https://calida-tour-planner.herokuapp.com/bookplan", bookedPlan)
+      .post("https://calida-tour-planner.onrender.com/bookplan", bookedPlan)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added");

@@ -7,7 +7,7 @@ const Plan = () => {
   const { planId } = useParams();
   const [plan, setPlan] = useState([]);
   useEffect(() => {
-    const url = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
+    const url = `https://calida-tour-planner.onrender.com/plans/${planId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPlan(data));

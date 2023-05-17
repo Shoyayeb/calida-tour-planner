@@ -13,7 +13,7 @@ const OrderedCards = (props) => {
   };
   // deleting a booked plan
   const removePlan = (planId) => {
-    const url = `https://calida-tour-planner.herokuapp.com/plans/${planId}`;
+    const url = `https://calida-tour-planner.onrender.com/plans/${planId}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -28,7 +28,7 @@ const OrderedCards = (props) => {
   };
   // getting id for booked place
   useEffect(() => {
-    const url = `https://calida-tour-planner.herokuapp.com/plans/${plan.bookedPlace}`;
+    const url = `https://calida-tour-planner.onrender.com/plans/${plan.bookedPlace}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPlanDetails(data));

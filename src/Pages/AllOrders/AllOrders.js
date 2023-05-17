@@ -5,7 +5,7 @@ import OrderedCards from "../Shared/OrderedCards/OrderedCards";
 const AllOrders = () => {
   const [plans, setPlans] = useState([]);
   useEffect(() => {
-    fetch("https://calida-tour-planner.herokuapp.com/bookedplans")
+    fetch("https://calida-tour-planner.onrender.com/bookedplans")
       .then((res) => res.json())
       .then((data) => setPlans(data));
   }, []);

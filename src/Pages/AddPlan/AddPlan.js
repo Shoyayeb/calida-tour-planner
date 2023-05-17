@@ -7,7 +7,7 @@ const AddPlan = () => {
   const { register, handleSubmit, reset } = useForm();
   const handleAddPlan = (data) => {
     axios
-      .post("https://calida-tour-planner.herokuapp.com/plans", data)
+      .post("https://calida-tour-planner.onrender.com/plans", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added");
